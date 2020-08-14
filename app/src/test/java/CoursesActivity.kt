@@ -1,11 +1,10 @@
-package com.example.hello
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hello.R
 import kotlinx.android.synthetic.main.activity_courses.*
 import layout.CoursesRecyclerViewAdapter
 data class Activity(var course_id:Int,var course_name:String,var course_code:Int,var instructor:String,var description:String)
@@ -26,15 +25,8 @@ class Courses : AppCompatActivity() {
             Activity(4,"Entreprenuership",7,"Kelly","Business Ideas"),
             Activity(7,"English",1,"Irine","Fluency"),
             Activity(6,"Swahili",5,"Lucy","Fluency")
-
-
-
-
-
-        )
+            )
         )
         rvCourses.adapter = coursesAdapter
-
-
     }
 }
