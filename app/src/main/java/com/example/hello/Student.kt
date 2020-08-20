@@ -1,3 +1,5 @@
+package com.example.hello
+
 import com.google.gson.annotations.SerializedName
 
  data class Student (
