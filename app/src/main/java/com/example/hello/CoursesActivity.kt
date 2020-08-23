@@ -35,7 +35,7 @@ class CoursesActivity : AppCompatActivity() {
             override fun onResponse(
                 call: Call<CoursesResponse>,
                 response: Okhttp3Response<CoursesResponse>
-            ):  = if (response.isSuccessful) {
+            ) = if (response.isSuccessful) {
                 var courseList = response.body()?.courses as List<Course>
                 var coursesAdapter = CoursesAdapter(courseList)
                 rvCourses.layoutManager = LinearLayoutManager(baseContext)

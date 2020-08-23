@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hello.R
+import kotlinx.android.synthetic.main.activity_progressbar.*
 
 
 val Nothing?.text: Any
@@ -39,7 +40,38 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(baseContext, CoursesActivity::class.java))
         }
     }
+    val btnStartProgress = this.button1
+    val progressBar:progressBar = this.progressBar1
+
+    btnStartProgress.setOnClick{
+        v ->
+
+        this.@MainActivity.runOnUiThread(java.lang.Runner){
+            ProgressBar.visibility = view.VISIBLE
+        }
+
+        try{
+            var i = 0;
+            while(i<Int.MAX_VALUE){
+                i++
+            }
+        }catch(e:InterruptedException){
+            e.printStackTrace()
+        }
+        this@MainActivity.runOnUiThread(java.lang.Runnable){
+            progressBar.visibility = view.GONE
+        })
+    }
+
+    private fun runOnUiThread(runnable: Runnable, function: () -> Unit) {
+
+    }
+    ).start()
+ }
+  }
 }
+
+
 
 class CoursesActivity {
 
