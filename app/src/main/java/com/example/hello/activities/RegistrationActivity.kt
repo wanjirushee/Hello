@@ -1,6 +1,7 @@
-package com.example.hello
+package com.example.hello.activities
 
 import android.os.Bundle
+import android.telecom.Call
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
@@ -9,6 +10,7 @@ import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.security.auth.callback.Callback
 import android.content.Intent as Intent1
 import com.example.hello.MainActivity as MainActivity
 
@@ -51,8 +53,6 @@ class RegistrationActivity : AppCompatActivity() {
 
 
     class RegistrationActivity : AppCompatActivity() {
-
-
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_registration)
@@ -87,14 +87,11 @@ class RegistrationActivity : AppCompatActivity() {
         }
 
         private fun registerUser(requestBody: MultipartBody) {
-
         }
-
-
         fun registerStudents(requestBody: RequestBody){
         var apiClient=ApiClient.buildService(ApiInterface::class.java)
             val registrationCall = apiClient.registerStudent(requestBody).also {
-                it.enqueue(object : Callback<RegistrationResponse>{
+                it.enqueue(object : Callback<RegistrationResponse> {
                     override fun onFailure(call: Call<RegistrationResponse>, t: Throwable) {
                         Toast.makeText(baseContext,t.message,Toast.LENGTH_LONG).show()
                     }

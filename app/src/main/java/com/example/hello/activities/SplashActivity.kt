@@ -1,4 +1,4 @@
-package com.example.hello
+package com.example.hello.activities
 
 import android.content.Intent
 import android.os.Bundle

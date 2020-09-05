@@ -1,8 +1,4 @@
-package com.example.hello
-
-import okhttp3.OkHttpClient
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+package com.example.hello.api
 
 object ApiClient {
     var client = OkHttpClient.Builder().build()

@@ -104,3 +104,64 @@
         tools:layout_editor_absoluteY="505dp"
         tools:text="SIGN IN" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<ImageView
+android:id="@+id/imageView3"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="16dp"
+android:layout_marginTop="40dp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:srcCompat="@drawable/ic_baseline_person_outline_24" />
+
+<ImageView
+android:id="@+id/imageView4"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="16dp"
+android:layout_marginTop="32dp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/etFirstName"
+app:srcCompat="@drawable/ic_baseline_person_outline_24" />
+
+<ImageView
+android:id="@+id/imageView5"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="16dp"
+android:layout_marginTop="32dp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/etLastName"
+app:srcCompat="@drawable/ic_baseline_email_24" />
+
+<ImageView
+android:id="@+id/imageView6"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="16dp"
+android:layout_marginTop="32dp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/etEmail"
+app:srcCompat="@drawable/ic_outline_phone_android_24" />
+
+<ImageView
+android:id="@+id/imageView7"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="16dp"
+android:layout_marginTop="32dp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/etPhoneNumber"
+app:srcCompat="@drawable/ic_sharp_fingerprint_24" />
+
+<ImageView
+android:id="@+id/imageView8"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="16dp"
+android:layout_marginTop="32dp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/etPassword"
+app:srcCompat="@drawable/ic_sharp_fingerprint_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>

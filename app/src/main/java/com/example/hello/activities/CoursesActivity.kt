@@ -1,4 +1,4 @@
-package com.example.hello
+package com.example.hello.activities
 
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_courses.*
+import com.example.hello.models.Course
 import retrofit2.Call
 import retrofit2.Callback
 import okhttp3.Response as Okhttp3Response
@@ -50,4 +50,29 @@ class CoursesActivity : AppCompatActivity() {
             }
         })
     }
+}
+
+fun fetchCoursesFromDatabase(){
+    Thread{
+        val database
+        val courses = 
+            database.courseDao().getAllCourses()
+
+        runOnUiThread {
+            displayCourses(courses)
+        }
+    }.start()
+}
+
+fun displayCourses(courses: List<Course>){
+    var coursesAdapter = CoursesAdapter(courses, this)
+    rvCourses.layoutManager = LinearLayoutManager(baseContext)
+    rvCourses.adapter = coursesAdapter
+}
+
+override fun onItemClick(course: Course) {
+    //obtain student id from shared preferences
+    //courseId = course.courseId
+    //make a post request https://github.com/owuor91/registration-api
+}
 }
